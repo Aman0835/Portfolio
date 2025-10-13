@@ -1,16 +1,44 @@
-# React + Vite
+# CODSOFT Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Personal portfolio website of **Aman Vishwakarma** — built to showcase projects, skills, and contact information with a clean, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## React Compiler
+**Website:** [https://amanvishwakarma.vercel.app/](https://amanvishwakarma.vercel.app/)
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📝 About
 
-## Expanding the ESLint configuration
+This repository contains a personal portfolio website that highlights my skills, projects, and ways to contact me. It’s designed to be responsive and easy to customize.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✅ Features
+
+- Responsive layout (mobile, tablet, desktop)
+- Sections: Home, About, Skills, Projects, Contact
+- Project cards with links / descriptions
+- Contact form (frontend) — can be wired to a backend or third-party service
+- Clean, minimal UI for quick customization
+
+---
+
+## 🛠 Tech Stack
+
+> Update these if you used different tools.
+
+- **Frontend:** React.js
+- **Styling:** Tailwind CSS / plain CSS (update as needed)
+- **Build:** Vite / Create React App
+- **Version control & hosting:** GitHub + GitHub Pages / Netlify / Vercel
+
+---
+
+## 🚀 Installation
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Aman0835/CODSOFT-portfolio.git
+   cd CODSOFT-portfolio
+   ```
