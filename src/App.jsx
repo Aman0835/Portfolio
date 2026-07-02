@@ -1,10 +1,10 @@
 
 import Main from "./components/main";
-import Projects from "./components/Projects";
-import Services from "./components/Services";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Projects from "./components/projects";
+import Services from "./components/services";
+import About from "./components/about";
+import Contact from "./components/contact";
+import Footer from "./components/footer";
 import Navbar from "./components/smallComponents/Navbar";
 
 function App() {
