@@ -1,5 +1,5 @@
 import React from "react";
-import SectionCards from "./smallComponents/SectionCards";
+import SectionCards from "./smallComponents/sectionCards";
 
 const Services = () => {
   return (
