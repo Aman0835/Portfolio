@@ -1,5 +1,5 @@
 
-import Main from "./components/Main";
+import Main from "./components/main";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import About from "./components/About";
