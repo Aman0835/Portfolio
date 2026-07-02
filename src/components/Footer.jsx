@@ -1,111 +1,116 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
   const [showButton, setShowButton] = useState(false);
-  const footerRef = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setShowButton(entry.isIntersecting);
-      },
-      { threshold: 0.4 }
-    );
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 400);
+    };
 
-    if (footerRef.current) observer.observe(footerRef.current);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      if (footerRef.current) observer.unobserve(footerRef.current);
+      clearInterval(timer);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer
-      ref={footerRef}
-      className="bg-[#E8E8E3] text-gray-800 px-16 py-24 relative">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-16 border-b border-gray-300 pb-16">
-        <div>
-          <h2 className="font-semibold text-lg mb-8">Menu</h2>
-          <hr className="border-gray-300 mb-8" />
-          <ul className="space-y-4 text-base">
-            {["Home", "Services", "Projects", "About", "Contact"].map(
-              (item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="hover:underline hover:text-gray-900 transition">
-                    {item}
-                  </a>
-                </li>
-              )
-            )}
-          </ul>
+    <footer className="bg-[#E8E8E3] text-[#171717] px-6 sm:px-8 lg:px-16 py-16 relative">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Menu + Socials */}
+        <div className="grid grid-cols-2 gap-10 border-b border-gray-300 pb-12">
+
+          {/* Menu */}
+          <div>
+            <h2 className="font-semibold text-xl mb-6">Menu</h2>
+            <hr className="border-gray-300 mb-6" />
+
+            <ul className="space-y-4">
+              {["Home", "Services", "Projects", "About", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="hover:text-black transition"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div>
+            <h2 className="font-semibold text-xl mb-6">Socials</h2>
+            <hr className="border-gray-300 mb-6" />
+
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/aman-vishwakarma-97700a317/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://github.com/Aman0835"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        <div>
-          <h2 className="font-semibold text-lg mb-8">Socials</h2>
-          <hr className="border-gray-300 mb-8" />
-          <ul className="space-y-4 text-base">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/aman-vishwakarma-97700a317/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline hover:text-gray-900 transition">
-                LinkedIn
-              </a>
-            </li>
+        {/* Time */}
+        <div className="text-center mt-10">
+          <p className="text-sm font-semibold tracking-wider">
+            LOCAL TIME
+          </p>
 
-            <li>
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline hover:text-gray-900 transition">
-                Instagram
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://github.com/Aman0835/CODSOFT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline hover:text-gray-900 transition">
-                GitHub
-              </a>
-            </li>
-          </ul>
+          <p className="mt-2 text-sm text-gray-600">
+            {time.toLocaleTimeString("en-IN", {
+              timeZone: "Asia/Kolkata",
+              hour12: true,
+            })}{" "}
+            IST
+          </p>
         </div>
       </div>
 
-      <div className="text-center mt-8">
-        <p className="font-semibold text-sm mb-4">LOCAL TIME</p>
-        <p className="text-sm">
-          {time.toLocaleTimeString("en-IN", {
-            timeZone: "Asia/Kolkata",
-            hour12: true,
-          })}{" "}
-          , IST
-        </p>
-      </div>
-
+      {/* Back To Top */}
       {showButton && (
         <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-gray-300 text-gray-800 p-4 rounded-full shadow-md hover:bg-gray-400 transition">
-          <ArrowUp size={20} />
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[#D9D9D9] shadow-lg flex items-center justify-center hover:scale-105 transition"
+        >
+          <ArrowUp size={22} />
         </button>
       )}
     </footer>

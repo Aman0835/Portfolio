@@ -5,58 +5,92 @@ import { ArrowUpRight } from "lucide-react";
 const Button = () => {
   return (
     <StyledWrapper>
-      <button className="button type1">
-        <span className="btn-txt">CONTACT</span>
-        <ArrowUpRight size={20} className="inline-block ml-2" />
-      </button>
+      <a href="#contact" className="button">
+        <span className="btn-content">
+          CONTACT
+          <ArrowUpRight size={20} />
+        </span>
+      </a>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
   .button {
-    height: 50px;
-    width: 200px;
     position: relative;
-    background-color: transparent;
+    width: 220px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    border: 2px solid #171717;
+    border-radius: 999px;
+    background: transparent;
     cursor: pointer;
-    border: 2px solid #252525;
     overflow: hidden;
-    border-radius: 30px;
+    transition: all 0.4s ease;
+  }
+
+  .btn-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 700;
+    letter-spacing: 3px;
     color: #171717;
-    transition: all 0.5s ease-in-out;
+    transition: color 0.4s ease;
   }
 
-  .btn-txt {
-    z-index: 1;
-    font-weight: 800;
-    letter-spacing: 4px;
-    position: relative; /* This is crucial for keeping text on top of the :after element */
-  }
-
-  .type1::after {
+  .button::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%; /* Make the pseudo-element the same height as the button */
-    width: 100%; /* Make the pseudo-element the same width as the button */
-    background-color: #333;
-    border-radius: 30px;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
-    transform: scaleX(0); /* Start with a scale of 0 on the X-axis */
-    transform-origin: left; /* Make the transition start from the left */
+    inset: 0;
+    background: #171717;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+    z-index: 1;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .button:hover .btn-content {
+    color: #E8E8E3;
+  }
+
+  .button:hover svg {
+    transform: translate(4px, -4px);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
   }
 
   .button:hover {
-    box-shadow: 1px 1px 200px #171717;
-    color: #171717;
-    border: 2px solid #171717; /* <-- Keep border black on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
   }
 
-  .type1:hover::after {
-    transform: scaleX(1); /* Expand to full width on hover */
+  @media (max-width: 640px) {
+    .button {
+      width: 180px;
+      height: 52px;
+    }
+
+    .btn-content {
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
   }
 `;
 

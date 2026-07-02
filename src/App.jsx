@@ -1,33 +1,39 @@
-import Header from "./components/Header";
-import About from "./components/About";
-import Services from "./components/services";
+
+import Main from "./components/Main";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Main from "./components/main";
-import Resume from "./components/resume";
+import Navbar from "./components/smallComponents/Navbar";
 
 function App() {
   return (
-    <div className="my-font text-gray-900 bg-[#E8E8E3] scroll-smooth">
-      <Header />
-      <div>
-        <section id="home">
+    <div className="min-h-screen overflow-x-hidden bg-[#E8E8E3] text-gray-900 my-font">
+      <Navbar />
+
+      <main className="pt-20">
+        <section id="home" >
           <Main />
         </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="projects">
+
+        <section id="projects" className="scroll-mt-20">
           <Projects />
         </section>
-        <section id="about">
+
+        <section id="services" className="scroll-mt-20">
+          <Services />
+        </section>
+
+        <section id="about" className="scroll-mt-20">
           <About />
         </section>
-        <section id="contact">
+
+        <section id="contact" className="scroll-mt-20">
           <Contact />
         </section>
-      </div>
+      </main>
+
       <Footer />
     </div>
   );

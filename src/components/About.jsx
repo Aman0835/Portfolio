@@ -1,236 +1,132 @@
-import React from "react";
-import TextAnimation from "./smallComponents/TextAnimation";
 import profile from "../assets/p2.png";
+import TextAnimation from "./smallComponents/TextAnimation";
+
+const skillGroups = [
+  {
+    title: "Languages & Tools",
+    skills: [
+      "Java",
+      "JavaScript",
+      "SQL",
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "GitHub",
+      "Firebase",
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "GSAP",
+      "jQuery",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Core CS Concepts",
+    skills: ["DSA", "DBMS", "OOPS", "System Design", "Operating System"],
+  },
+];
 
 const About = () => {
   return (
-    <div className="min-h-screen  bg-[#080807] rounded-b-4xl">
-      <div className=" min-h-screen    p-20 text-[#A29E9A] flex flex-col gap-16  ">
-        <div className="flex ">
-          <div className=" text-[#D1D1C7] text-[6rem] w-1/2 leading-30 font-bold p-8 mt-16 pl-0">
-            DEVELOPER DESIGNER CREATOR /
+    <section className="bg-[#080807] rounded-b-[40px] text-[#A29E9A]">
+      <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-16 py-16 lg:py-24">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Left */}
+          <div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none text-[#D1D1C7]">
+              DEVELOPER
+              <br />
+              DESIGNER
+              <br />
+              CREATOR /
+            </h1>
           </div>
-          <div className="  flex flex-col  w-1/2">
-            <div className="text-[6rem] font-semibold mb-8 flex  justify-center text-[#D1D1C7]">
+
+          {/* Right */}
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-semibold text-center lg:text-left text-[#D1D1C7] mb-12">
               Skills
-            </div>
-            <div className="flex h-full ">
-              <div className="w-3/12 ml-16">
-                <div className="text-3xl p-2 text-[#D1D1C7] font-semibold">
-                  Languages & Tools
+            </h2>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+              {skillGroups.map((group) => (
+                <div key={group.title} className="min-w-0">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#D1D1C7] mb-4">
+                    {group.title}
+                  </h3>
+
+                  <div className="space-y-3">
+                    {group.skills.map((skill) => (
+                      <div
+                        key={skill}
+                        className="text-base sm:text-lg cursor-pointer">
+                        <TextAnimation
+                          text={skill}
+                          animateOn="both"
+                          revealDirection="center"
+                          speed={70}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="p-2  text-xl cursor-pointer">
-                  <TextAnimation
-                    text="JAVA"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="JavaScript"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="SQL"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Docker"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Kubernative"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Git"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Github"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Firebase"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-              </div>
-              <div className="w-3/12 ml-8">
-                <div className="text-3xl p-2 text-[#D1D1C7] font-semibold">
-                  Frameworks & Libraries
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="React"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Node.js"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Express.js"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="TailwindCSS"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="GSAP"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="JQuery"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="Framer Motion"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-              </div>
-              <div className="w-3/12 ml-8 ">
-                <div className="text-3xl p-2 text-[#D1D1C7] font-semibold">
-                  Core CS Concepts
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="DSA"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="DBMS"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer">
-                  <TextAnimation
-                    text="OOPS"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer ">
-                  <TextAnimation
-                    text="System Design"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-                <div className="p-2 text-xl cursor-pointer w-[10ch]">
-                  <TextAnimation
-                    text="Operating System"
-                    animateOn="both"
-                    revealDirection="center"
-                    speed={70}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-        <div className="   p-8 pl-0  grid grid-cols-7 gap-8 text-[#D1D1C7] ">
-          <div className=" h-[70%]  overflow-hidden  col-span-2">
+
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-12 mt-24 items-start">
+          {/* Image */}
+          <div className="lg:col-span-2">
             <img
               src={profile}
-              alt=""
-              className="h-full  overflow-hidden rounded-lg "
+              alt="Profile"
+              className="w-full rounded-2xl object-cover grayscale"
             />
           </div>
-          <div className="col-end-8 col-start-4 text-[#A29E9A] ">
-            <div className="flex gap-16 flex-col">
-              <p className="text-4xl font-bold">
-                I'm a software engineer driven by a passion for turning ideas
-                into clean,intuitive digital experiences.
-              </p>
-              <div className=" flex  gap-16">
-                <div className="text-[#6B645C] capitalize w-[15ch] "> (About me)</div>
-                <div className="w-[40ch] text-2xl  ">
-                  <p>
-                    I am a passionate Software Engineer with a knack for
-                    building full-stack web applications using modern
-                    technologies like Next.js and TailwindCSS.My journey in tech
-                    began with a curiosity for solving real-world problems
-                    through innovative solutions,which evolved into a love for
-                    crafting user-centric digital experiences. 
-                    
-                  </p>
-                  <p className="pt-8">Beyond coding,I
-                    thrive in collaborative environments and enjoy tackling
-                    challenging problems with creative solutions.I aim to
-                    contribute to impact full projects that make a difference in
-                    users' lives.</p>
-                </div>
+
+          {/* About */}
+          <div className="lg:col-span-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#D1D1C7] leading-tight">
+              I'm a software engineer driven by a passion for turning ideas into
+              clean, intuitive digital experiences.
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+              <div className="text-[#6B645C] uppercase tracking-wide">
+                (About Me)
+              </div>
+
+              <div className="md:col-span-3 space-y-6 text-lg sm:text-xl leading-relaxed">
+                <p>
+                  I'm{" "}
+                  <span className="text-[#D1D1C7] font-semibold">
+                    Aman Vishwakarma
+                  </span>
+                  , a passionate Full-Stack Developer who enjoys building modern
+                  web applications that are fast, scalable, and intuitive.
+                </p>
+
+                <p>
+                  With experience across frontend and backend development, I
+                  focus on creating clean user experiences, writing maintainable
+                  code, and delivering products that solve real-world problems.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

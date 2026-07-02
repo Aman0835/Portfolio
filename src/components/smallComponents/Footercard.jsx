@@ -1,183 +1,111 @@
 import React from "react";
-import styled from "styled-components";
+import { Mail, Send } from "lucide-react";
 
 const Footercard = () => {
   return (
-    <StyledWrapper>
-      <div className="card">
-        <div className="banner">
-          <span className="banner-text">Contact Us</span>
-          <span className="banner-text">JOIN US</span>
-        </div>
-        <span className="card__title">Aman !!!</span>
-        <p className="card__subtitle font-bold">
-          Contact me for collaborations, projects, or just to say hello!
+    <div className="w-full rounded-[32px] border border-[#3B3B38] bg-[#111111]/70 backdrop-blur-xl p-6 sm:p-8 lg:p-10">
+
+      {/* Heading */}
+      <div className="mb-10">
+        <p className="text-[#6B645C] uppercase tracking-[4px] text-sm">
+          Contact
         </p>
-        <form className="card__form">
-          <input placeholder="Your Email" type="email" required />
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message here..."
-            required
-          />
-          <button className="sign-up">Send</button>
-        </form>
+
+        <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-[#D1D1C7]">
+          Let's build
+          <br />
+          something amazing.
+        </h2>
+
+        <p className="mt-5 text-[#A29E9A] text-lg leading-relaxed max-w-lg">
+          Have a project, job opportunity, or just want to say hello?
+          I'd love to hear from you.
+        </p>
       </div>
-    </StyledWrapper>
+
+      {/* Form */}
+      <form className="space-y-6">
+
+        {/* Email */}
+        <div className="relative">
+          <Mail
+            size={20}
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-[#6B645C]"
+          />
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="
+              w-full
+              rounded-full
+              bg-transparent
+              border
+              border-[#3B3B38]
+              py-4
+              pl-14
+              pr-5
+              text-[#D1D1C7]
+              outline-none
+              placeholder:text-[#6B645C]
+              focus:border-[#A29E9A]
+              transition
+            "
+          />
+        </div>
+
+        {/* Message */}
+        <textarea
+          rows="6"
+          placeholder="Tell me about your project..."
+          className="
+            w-full
+            rounded-3xl
+            bg-transparent
+            border
+            border-[#3B3B38]
+            p-5
+            text-[#D1D1C7]
+            outline-none
+            resize-none
+            placeholder:text-[#6B645C]
+            focus:border-[#A29E9A]
+            transition
+          "
+        />
+
+        {/* Button */}
+        <button
+          className="
+            group
+            w-full
+            rounded-full
+            bg-[#D1D1C7]
+            text-[#080807]
+            py-4
+            font-semibold
+            text-lg
+            flex
+            justify-center
+            items-center
+            gap-3
+            transition-all
+            duration-300
+            hover:bg-white
+            hover:scale-[1.02]
+          "
+        >
+          Send Message
+
+          <Send
+            size={20}
+            className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          />
+        </button>
+
+      </form>
+    </div>
   );
 };
-
-const StyledWrapper = styled.div`
-  .card {
-    width: full;
-    height: full;
-    padding: 30px;
-    background: #e8e8e3;
-    border: 8px solid #080807;
-    box-shadow: 15px 15px 0 #080807;
-
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .card:active {
-    animation: shake 0.5s ease-in-out;
-  }
-  .card:hover {
-    transform: scale(1.02);
-    box-shadow: 20px 20px 0 #080807;
-  }
-  .banner {
-    position: absolute;
-    top: 3px;
-    right: -95px;
-    background: #080807;
-    color: #fff;
-    padding: 15px;
-    width: 350px;
-    text-align: center;
-    transform: rotate(45deg);
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 2px;
-    overflow: hidden;
-    transition: background 0.5s ease;
-  }
-  .banner-text {
-    display: inline-block;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    width: 100%;
-    position: absolute;
-    left: 13%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .banner:hover .banner-text:first-child {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  .banner:hover .banner-text:last-child {
-    opacity: 1;
-    transform: translateY(-40%);
-  }
-  .banner-text:last-child {
-    opacity: 0;
-    transform: translateY(60%);
-  }
-  .banner:hover {
-    background: red;
-  }
-  .card__title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: block;
-    border-bottom: 2px solid #000;
-    width: 25%; /* or any other percentage or pixel value */
-  }
-  .card__subtitle {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-  }
-  .card__form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .card__form input {
-    padding: 12px;
-    border: 4px solid #000;
-    font-size: 16px;
-    font-family: "Proxima Nova", sans-serif;
-    transition: all 0.3s ease;
-    background-color: #e8e8e3;
-  }
-
-  #message {
-    height: 124px;
-    border: 4px solid #000;
-    font-size: 16px;
-    font-family: "Proxima Nova", sans-serif;
-    padding: 12px;
-    background-color: #e8e8e3;
-    resize: none;
-    transition: all 0.3s ease;
-  }
-
-  #message:focus {
-    outline: none;
-    transform: scale(1.05);
-  }
-
-  .card__form input:focus {
-    outline: none;
-    transform: scale(1.05);
-  }
-  .sign-up {
-    border: 4px solid #000;
-    background: #000;
-    color: #fff;
-    padding: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .sign-up:hover {
-    background: #e8e8e3;
-    color: #000;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 0 #000;
-  }
-  .sign-up:active {
-    animation: shake 0.5s ease-in-out;
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  @keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-5px);
-    }
-    50% {
-      transform: translateX(5px);
-    }
-    75% {
-      transform: translateX(-5px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-`;
 
 export default Footercard;

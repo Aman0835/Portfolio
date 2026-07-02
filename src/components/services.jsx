@@ -1,61 +1,77 @@
 import React from "react";
-import SectionCards from "./smallComponents/sectionCards";  
+import SectionCards from "./smallComponents/SectionCards";
 
 const Services = () => {
   return (
-    <div className="w-full min-h-screen  my-font">
-      <div className=" flex flex-col gap-4 overflow-hidden hide-scrollbar bg-[#080807] text-[#D1D1C7] rounded-t-4xl">
-        <div className="text-[8rem] pl-10 font-semibold mb-8   ">
+    <section className="w-full bg-[#080807] text-[#D1D1C7] rounded-t-[40px] overflow-hidden">
+
+      {/* Header */}
+      <div className="px-5 sm:px-8 lg:px-16 py-10 lg:py-16">
+
+        <h1 className="text-5xl sm:text-8xl md:text-7xl lg:text-[8rem] font-semibold leading-none">
           WHAT I DO/
-        </div>
-        <div className="flex justify-end text-[#A29E9A]   ">
-          <div className="text-2xl px-4   w-[50ch]  flex p-4 gap-8 mr-16">
-            <div className=" text-[#6B645C]">(Service)</div>
-            I’m Aman Vishwakarma, a passionate Full Stack Developer. I love
-            turning ideas into fast, reliable, and user-friendly web
-            applications. Skilled in both frontend and backend technologies, I
-            bridge the gap between design and functionality. I help businesses,
-            startups, and teams bring their digital visions to life.
+        </h1>
+
+        <div className="mt-10 flex justify-end">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl">
+
+            <div className="text-[#6B645C] text-lg">
+              (Services)
+            </div>
+
+            <p className="md:col-span-4 text-lg sm:text-xl leading-relaxed text-[#A29E9A]">
+              I'm Aman Vishwakarma, a Full-Stack Developer who builds modern,
+              scalable web applications. I combine clean UI design with robust
+              backend architecture to create fast, reliable, and user-focused
+              digital experiences.
+            </p>
+
           </div>
         </div>
-        <hr className="mr-auto ml-auto border-t border-[#A29E9A] opacity-60 w-[95%] " />
+
       </div>
 
+      <hr className="border-[#A29E9A]/40 mx-5 sm:mx-8 lg:mx-16" />
+
+      {/* Services */}
       <SectionCards
         number="1"
         title="Full-Stack Development"
-        description=" From frontend interactions to backend APIs, I build complete web
-              solutions. I work with modern stacks to deliver apps that are
-              scalable, maintainable, and ready for real-world users."
+        description="From frontend interactions to backend APIs, I build complete web applications using modern technologies that are scalable, maintainable, and production-ready."
         skills={[
-          "React, Node.js, Express.js",
-          "REST APIs, Firebase, Docker",
-          "Git, GitHub, Postman",
+          "React • Node.js • Express.js",
+          "REST APIs • Firebase • Docker",
+          "Git • GitHub • Postman",
         ]}
       />
-      <hr className=" border-t border-[#A29E9A] opacity-60 mt-0  " />
+
+      <hr className="border-[#A29E9A]/40 mx-5 sm:mx-8 lg:mx-16" />
+
       <SectionCards
         number="2"
-        title="UI/UX & Frontend "
-        description="I’m Aman Vishwakarma — a developer who builds experiences, not just code. I create modern, responsive web apps where design and function blend seamlessly, delivering scalable, maintainable, user-focused solutions."
+        title="UI/UX & Frontend Development"
+        description="I create modern, responsive interfaces with clean layouts, smooth animations, and user experiences that feel intuitive across every device."
         skills={[
-          "NextJs, TailwindCSS, GSAP",
-          "Figma to Code",
-          "HTML, CSS, JavaScript",
+          "React • Next.js • Tailwind CSS",
+          "GSAP • Framer Motion",
+          "Figma to Responsive Code",
         ]}
       />
-      <hr className=" border-t border-[#A29E9A] opacity-60 mt-0  " />
+
+      <hr className="border-[#A29E9A]/40 mx-5 sm:mx-8 lg:mx-16" />
+
       <SectionCards
         number="3"
-        title="Optimization "
-        description=" Beyond handling data, I’m driven by the challenge of turning complex raw inputs into reliable, usable systems. I enjoy designing pipelines that power insights and apply core CS principles to build for scale, speed, and stability."
+        title="Backend & Optimization"
+        description="I design efficient backend systems, optimize application performance, and build software that is reliable, scalable, and easy to maintain."
         skills={[
           "Data Structures & Algorithms",
-          "DBMS, OOP, OS Fundamentals",
-          "Data Pipelines, ETL, and Scalability",
+          "DBMS • OOP • Operating Systems",
+          "Performance Optimization & Scalability",
         ]}
       />
-    </div>
+
+    </section>
   );
 };
 
