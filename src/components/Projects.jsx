@@ -15,7 +15,7 @@ const Projects = () => {
         </h1>
       </div>
 
-      {/* Description */}
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
         <div className="flex lg:justify-end">
           <p className="text-[#6B645C] text-lg sm:text-xl lg:text-2xl">
