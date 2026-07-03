@@ -49,7 +49,7 @@ const Contact = () => {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
 
             <a
-              href="/public/amanvishwakarma.pdf"
+              href="/amanvishwakarma.pdf"
               target="_blank"
               className="flex items-center gap-2 rounded-full border border-[#3A3A3A] px-5 py-3 text-[#D1D1C7] hover:bg-[#1A1A1A] transition"
             >
